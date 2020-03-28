@@ -16,18 +16,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose.connect(
-//   process.env.MONGODB_URI ||
-//     "mongodb://user77:qwerty77@ds135810.mlab.com:35810/heroku_fldkh30b",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   }
-// );
-
-let uri = "mongodb://user77:qwerty77@ds135810.mlab.com:35810/heroku_fldkh30b";
-
-mongoose.connect(uri);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true
+});
 
 //routes!!  routes!!  routes!!
 //html routes//
@@ -93,3 +84,5 @@ app.post("/api/workouts", ({ body }, res) => {
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+
+// mongodb://heroku_fldkh30b:uid3mufoigk66qd4tteocc4lci@ds135810.mlab.com:35810/heroku_fldkh30b
