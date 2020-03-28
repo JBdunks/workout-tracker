@@ -84,5 +84,3 @@ app.post("/api/workouts", ({ body }, res) => {
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
-
-// mongodb://heroku_fldkh30b:uid3mufoigk66qd4tteocc4lci@ds135810.mlab.com:35810/heroku_fldkh30b
